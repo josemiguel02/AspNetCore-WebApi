@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
-namespace my_rest_api;
+namespace MyWebApi;
 
 public class Startup
 {

@@ -1,4 +1,4 @@
-using my_rest_api;
+using MyWebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 

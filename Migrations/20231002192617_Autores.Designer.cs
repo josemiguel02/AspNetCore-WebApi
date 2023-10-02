@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using my_rest_api;
+using MyWebApi;
 
 #nullable disable
 
-namespace my_rest_api.Migrations
+namespace MyWebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230703152012_Libros")]
-    partial class Libros
+    [Migration("20231002192617_Autores")]
+    partial class Autores
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,13 +19,14 @@ namespace my_rest_api.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0-preview.5.23280.1");
 
-            modelBuilder.Entity("my_rest_api.Entidades.Autor", b =>
+            modelBuilder.Entity("MyWebApi.Entidades.Autor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nombre")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -33,7 +34,7 @@ namespace my_rest_api.Migrations
                     b.ToTable("Autores");
                 });
 
-            modelBuilder.Entity("my_rest_api.Entidades.Libro", b =>
+            modelBuilder.Entity("MyWebApi.Entidades.Libro", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,6 +44,7 @@ namespace my_rest_api.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -52,9 +54,9 @@ namespace my_rest_api.Migrations
                     b.ToTable("Libros");
                 });
 
-            modelBuilder.Entity("my_rest_api.Entidades.Libro", b =>
+            modelBuilder.Entity("MyWebApi.Entidades.Libro", b =>
                 {
-                    b.HasOne("my_rest_api.Entidades.Autor", "Autor")
+                    b.HasOne("MyWebApi.Entidades.Autor", "Autor")
                         .WithMany("Libros")
                         .HasForeignKey("AutorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -63,7 +65,7 @@ namespace my_rest_api.Migrations
                     b.Navigation("Autor");
                 });
 
-            modelBuilder.Entity("my_rest_api.Entidades.Autor", b =>
+            modelBuilder.Entity("MyWebApi.Entidades.Autor", b =>
                 {
                     b.Navigation("Libros");
                 });

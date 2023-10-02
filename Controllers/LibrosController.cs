@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using my_rest_api.Entidades;
+using MyWebApi.Entidades;
 
-namespace my_rest_api.Controllers;
+namespace MyWebApi.Controllers;
 
 [ApiController]
 [Route("api/libros")]

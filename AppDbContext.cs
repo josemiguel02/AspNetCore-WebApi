@@ -1,13 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using my_rest_api.Entidades;
+using MyWebApi.Entidades;
 
-namespace my_rest_api;
+namespace MyWebApi;
 
-public class AppDbContext: DbContext
+public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions options): base(options)
+    public AppDbContext(DbContextOptions options) : base(options)
     {
-
     }
 
     public DbSet<Autor> Autores { get; set; }

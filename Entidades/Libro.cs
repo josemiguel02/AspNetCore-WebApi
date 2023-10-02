@@ -1,4 +1,4 @@
-namespace my_rest_api.Entidades;
+namespace MyWebApi.Entidades;
 
 public class Libro
 {
